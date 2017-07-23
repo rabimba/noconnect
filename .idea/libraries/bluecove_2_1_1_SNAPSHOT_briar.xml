@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="bluecove-2.1.1-SNAPSHOT-briar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/nc-j2se/libs/bluecove-2.1.1-SNAPSHOT-briar.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

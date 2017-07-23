@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jssc-0.9-briar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/nc-j2se/libs/jssc-0.9-briar.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

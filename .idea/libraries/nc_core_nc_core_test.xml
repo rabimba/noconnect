@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="nc-core.nc-core-test">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/nc-core/build/libs/nc-core-test.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

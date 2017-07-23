@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jmock-legacy-2.8.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jmock/jmock-legacy/2.8.2/14c09ac094f72682ec96185ffa085f1fa392abf3/jmock-legacy-2.8.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jmock/jmock-legacy/2.8.2/c4821621526d2d59c025047fbe0643dc36b624a0/jmock-legacy-2.8.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jnotify-0.94">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/nc-j2se/libs/jnotify-0.94.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

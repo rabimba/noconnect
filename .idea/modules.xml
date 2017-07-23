@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/nc-android/nc-android.iml" filepath="$PROJECT_DIR$/nc-android/nc-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nc-api/nc-api.iml" filepath="$PROJECT_DIR$/nc-api/nc-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nc-core/nc-core.iml" filepath="$PROJECT_DIR$/nc-core/nc-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nc-j2se/nc-j2se.iml" filepath="$PROJECT_DIR$/nc-j2se/nc-j2se.iml" />
+      <module fileurl="file://$PROJECT_DIR$/noconnect.iml" filepath="$PROJECT_DIR$/noconnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/noconnect.iml" filepath="$PROJECT_DIR$/noconnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/noconnect-android/noconnect-android.iml" filepath="$PROJECT_DIR$/noconnect-android/noconnect-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/noconnect-api/noconnect-api.iml" filepath="$PROJECT_DIR$/noconnect-api/noconnect-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/noconnect-core/noconnect-core.iml" filepath="$PROJECT_DIR$/noconnect-core/noconnect-core.iml" />
+    </modules>
+  </component>
+</project>

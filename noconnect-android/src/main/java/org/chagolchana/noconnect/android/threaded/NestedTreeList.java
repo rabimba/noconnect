@@ -1,0 +1,53 @@
+package org.chagolchana.noconnect.android.threaded;
+
+import android.support.annotation.UiThread;
+
+import org.chagolchana.chagol.api.nullsafety.NotNullByDefault;
+import org.chagolchana.noconnect.api.client.MessageTree;
+import org.chagolchana.noconnect.client.MessageTreeImpl;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+@UiThread
+@NotNullByDefault
+public class NestedTreeList<T extends MessageTree.MessageNode>
+		implements Iterable<T> {
+
+	private final MessageTree<T> tree = new MessageTreeImpl<>();
+	private List<T> depthFirstCollection = new ArrayList<>();
+
+	public void addAll(Collection<T> collection) {
+		tree.add(collection);
+		depthFirstCollection = new ArrayList<>(tree.depthFirstOrder());
+	}
+
+	public void add(T elem) {
+		tree.add(elem);
+		depthFirstCollection = new ArrayList<>(tree.depthFirstOrder());
+	}
+
+	public void clear() {
+		tree.clear();
+		depthFirstCollection.clear();
+	}
+
+	public T get(int index) {
+		return depthFirstCollection.get(index);
+	}
+
+	public int indexOf(T elem) {
+		return depthFirstCollection.indexOf(elem);
+	}
+
+	public int size() {
+		return depthFirstCollection.size();
+	}
+
+	@Override
+	public Iterator<T> iterator() {
+		return depthFirstCollection.iterator();
+	}
+}

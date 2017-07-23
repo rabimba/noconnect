@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/rabimbakaranjai/Documents/GitHub/noconnect/noconnect-android/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
+        <dex dex="/Users/rabimbakaranjai/Documents/GitHub/noconnect/noconnect-android/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3b402c7fa9a9e811050949f5317260a0b9d543ae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rabimbakaranjai/Documents/GitHub/noconnect/noconnect-android/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="df5b3da1818433d67024cc4a9bd2a57692f2066f">
+        <dex dex="/Users/rabimbakaranjai/Documents/GitHub/noconnect/noconnect-android/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a8c592b3fb3e9096662feb1053bdeb196e5964b5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/rabimbakaranjai/Documents/GitHub/noconnect/nc-android/build/intermediates/bundles/default/libs/jtorctl-briar.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1d8ec985b7c87af5d575ca5e28f7d52bbb479f18">
+        <dex dex="/Users/rabimbakaranjai/Documents/GitHub/noconnect/noconnect-android/build/intermediates/transforms/dex/debug/folders/1000/8/jtorctl-briar_f7733e99b34ac7d13cac1e4240c2a0285cf4ef73/classes.dex" />
+    </item>
+
+</items>

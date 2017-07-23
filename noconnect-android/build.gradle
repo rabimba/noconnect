@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+apply plugin: 'witness'
+
+dependencies {
+	def supportVersion = '23.2.1'
+	compile project(':noconnect-core')
+	compile project(':nc-android')
+	compile "com.android.support:support-v4:$supportVersion"
+	compile("com.android.support:appcompat-v7:$supportVersion") {
+		exclude module: 'support-v4'
+	}
+	compile("com.android.support:preference-v14:$supportVersion") {
+		exclude module: 'support-v4'
+	}
+	compile("com.android.support:design:$supportVersion") {
+		exclude module: 'support-v4'
+		exclude module: 'recyclerview-v7'
+	}
+	compile "com.android.support:cardview-v7:$supportVersion"
+	compile "com.android.support:support-annotations:$supportVersion"
+	compile('ch.acra:acra:4.8.5') {
+		exclude module: 'support-v4'
+		exclude module: 'support-annotations'
+	}
+	compile 'info.guardianproject.panic:panic:0.5'
+	compile 'info.guardianproject.trustedintents:trustedintents:0.2'
+	compile 'de.hdodenhof:circleimageview:2.1.0'
+	compile 'com.google.zxing:core:3.3.0'
+	compile 'com.jpardogo.materialtabstrip:library:1.1.0'
+	compile 'com.github.bumptech.glide:glide:3.8.0'
+	compile 'uk.co.samuelwall:material-tap-target-prompt:1.9.2'
+	provided 'javax.annotation:jsr250-api:1.0'
+	testCompile project(path: ':nc-core', configuration: 'testOutput')
+	testCompile 'org.robolectric:robolectric:3.0'
+	testCompile 'org.mockito:mockito-core:2.8.9'
+}
+
+dependencyVerification {
+	verify = [
+			'ch.acra:acra:afd5b28934d5166b55f261c85685ad59e8a4ebe9ca1960906afaa8c76d8dc9eb',
+			'info.guardianproject.panic:panic:a7ed9439826db2e9901649892cf9afbe76f00991b768d8f4c26332d7c9406cb2',
+			'info.guardianproject.trustedintents:trustedintents:6221456d8821a8d974c2acf86306900237cf6afaaa94a4c9c44e161350f80f3e',
+			'de.hdodenhof:circleimageview:bcbc588e19e6dcf8c120b1957776bfe229efba5d2fbe5da7156372eeacf65503',
+			'com.google.zxing:core:bba7724e02a997cec38213af77133ee8e24b0d5cf5fa7ecbc16a4fa93f11ee0d',
+			'com.jpardogo.materialtabstrip:library:24d19232b319f8c73e25793432357919a7ed972186f57a3b2c9093ea74ad8311',
+			'com.github.bumptech.glide:glide:750d9e7b940dc0ee48f8680623b55d46e14e8727acc922d7b156e57e7c549655',
+			'uk.co.samuelwall:material-tap-target-prompt:5d4951124366bc5c52e57beaa294db7611f0aa2a8d80e0163e1383e1966ba5b2',
+			'com.android.support:appcompat-v7:00f9d93acacd6731f309724054bf51492814b4b2869f16d7d5c0038dcb8c9a0d',
+			'com.android.support:preference-v14:44881bb46094e86d0bc2426f205419674a5b4eb514b44b5a4659b5de29f71eb7',
+			'com.android.support:design:003e0c0bea0a6891f8b2bc43f20ae7af2a49a17363e5bb10df5ee0bae12fa686',
+			'com.android.support:cardview-v7:4595f1c4a28cfa083b6c0920ad4d49e1c2ca4b8302a955e548f68eb63b74931b',
+			'com.android.support:animated-vector-drawable:06d1963b85aa917099d7757e6a7b3e4dc06889413dc747f625ae8683606db3a1',
+			'com.android.support:support-vector-drawable:799bafe4c3de812386f0b291f744d5d6876452722dd40189b9ab87dbbf594ea1',
+			'com.android.support:recyclerview-v7:44040a888e23e0c93162a3377cfe06751080e3c22d369ab0d4301ef60d63b0fe',
+			'com.android.support:preference-v7:775101bd07bd052e455761c5c5d9523d7ad59f2f320e3e8cbde241fd6b1d6025',
+	]
+}
+
+def getGitHash = { ->
+	def stdout = new ByteArrayOutputStream()
+	try {
+		exec {
+			commandLine 'git', 'rev-parse', '--short', 'HEAD'
+			standardOutput = stdout
+		}
+		return stdout.toString().trim()
+	} catch (Exception ignored) {
+		return "No commit hash"
+	}
+}
+
+android {
+	compileSdkVersion 23
+	buildToolsVersion '25.0.3'
+	defaultConfig {
+		minSdkVersion 14
+		targetSdkVersion 22
+		versionCode 15
+		versionName "0.15"
+		applicationId 'org.chagolchana.noconnect.beta'
+		resValue "string", "app_package", "org.briarproject.briar.beta"
+		buildConfigField "String", "GitHash", "\"${getGitHash()}\""
+	}
+	buildTypes {
+		debug {
+			shrinkResources false
+			minifyEnabled true
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+		}
+		release {
+			shrinkResources true
+			minifyEnabled true
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+		}
+	}
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_7
+		targetCompatibility JavaVersion.VERSION_1_7
+	}
+	lintOptions {
+		warning 'MissingTranslation'
+		warning 'ImpliedQuantity'
+		warning 'ExtraTranslation'
+	}
+	productFlavors {
+	}
+}

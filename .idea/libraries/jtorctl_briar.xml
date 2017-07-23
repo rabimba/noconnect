@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jtorctl-briar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/nc-android/libs/jtorctl-briar.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

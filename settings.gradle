@@ -1,0 +1,6 @@
+include ':nc-api', ':nc-android'
+include ':nc-core'
+include ':nc-j2se'
+include ':noconnect-api'
+include ':noconnect-core'
+include ':noconnect-android'

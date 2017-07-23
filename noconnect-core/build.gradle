@@ -1,0 +1,34 @@
+plugins {
+	id 'java'
+	id 'net.ltgt.apt' version '0.9'
+	id 'idea'
+}
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+apply plugin: 'witness'
+
+dependencies {
+	compile project(':noconnect-api')
+	compile 'com.rometools:rome:1.7.3'
+	compile 'org.jdom:jdom2:2.0.6'
+	compile 'com.squareup.okhttp3:okhttp:3.8.0'
+	compile 'org.jsoup:jsoup:1.10.3'
+
+	testCompile project(':nc-core')
+	testCompile project(path: ':nc-core', configuration: 'testOutput')
+	testCompile project(path: ':nc-api', configuration: 'testOutput')
+	testCompile 'net.jodah:concurrentunit:0.4.2'
+}
+
+dependencyVerification {
+	verify = [
+			'com.rometools:rome:077367bf8fa01b211c9da712c2aa862724195773c5693fd4d97d61d6457e96c6',
+			'org.jdom:jdom2:1345f11ba606d15603d6740551a8c21947c0215640770ec67271fe78bea97cf5',
+			'com.squareup.okhttp3:okhttp:19e1db51787716ff0046fa19e408fb34ed32a6274baa0c07475bf724b4eb6800',
+			'org.jsoup:jsoup:a0784e793d7f518eb1defb47b428da011cd483c5da32d49c569bf491e4f1579a',
+			'org.slf4j:slf4j-api:e56288031f5e60652c06e7bb6e9fa410a61231ab54890f7b708fc6adc4107c5b',
+			'com.squareup.okio:okio:734269c3ebc5090e3b23566db558f421f0b4027277c79ad5d176b8ec168bb850',
+	]
+}

@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'net.ltgt.apt' version '0.9'
+	id 'idea'
+}
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+apply plugin: 'witness'
+
+dependencies {
+	compile project(':nc-api')
+	compile 'com.madgag.spongycastle:core:1.56.0.0'
+	compile 'com.h2database:h2:1.4.192' // This is the last version that supports Java 1.6
+	compile 'org.bitlet:weupnp:0.1.4'
+
+	testCompile project(path: ':nc-api', configuration: 'testOutput')
+}
+
+dependencyVerification {
+	verify = [
+			'com.madgag.spongycastle:core:5e791b0eaa9e0c4594231b44f616a52adddb7dccedeb0ad9ad74887e19499a23',
+			'com.h2database:h2:225b22e9857235c46c93861410b60b8c81c10dc8985f4faf188985ba5445126c',
+			'org.bitlet:weupnp:88df7e6504929d00bdb832863761385c68ab92af945b04f0770b126270a444fb',
+	]
+}
+
+// needed to make test output available to bramble-j2se
+configurations {
+	testOutput.extendsFrom(testCompile)
+}
+task jarTest(type: Jar, dependsOn: testClasses) {
+	from sourceSets.test.output
+	classifier = 'test'
+}
+artifacts {
+	testOutput jarTest
+}
