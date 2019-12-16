@@ -5,7 +5,8 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.UiThread;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.widget.ImageButton;
+//import android.widget.ImageButton;
+import android.support.v7.widget.AppCompatImageButton;
 
 import org.chagolchana.noconnect.R;
 import org.thoughtcrime.securesms.components.emoji.EmojiDrawer.EmojiDrawerListener;
@@ -13,7 +14,7 @@ import org.thoughtcrime.securesms.components.emoji.EmojiDrawer.EmojiDrawerListen
 import javax.annotation.Nullable;
 
 @UiThread
-public class EmojiToggle extends ImageButton implements EmojiDrawerListener {
+public class EmojiToggle extends AppCompatImageButton implements EmojiDrawerListener {
 
 	private final Drawable emojiToggle;
 	private final Drawable imeToggle;

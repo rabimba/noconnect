@@ -4,13 +4,13 @@ import android.content.Context;
 import android.support.annotation.UiThread;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.widget.ImageView;
+import android.support.v7.widget.AppCompatImageView;
 
 import org.chagolchana.chagol.api.identity.Author.Status;
 import org.chagolchana.noconnect.R;
 
 @UiThread
-public class TrustIndicatorView extends ImageView {
+public class TrustIndicatorView extends AppCompatImageView {
 
 	public TrustIndicatorView(Context context) {
 		super(context);
