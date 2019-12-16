@@ -264,7 +264,7 @@ public class NavDrawerActivity extends BriarActivity implements
 	@SuppressWarnings("ConstantConditions")
 	private void showExpiryWarning() {
 		int daysUntilExpiry = getDaysUntilExpiry();
-		if (daysUntilExpiry < 0) signOut();
+		//if (daysUntilExpiry < 0) signOut();
 
 		// show expiry warning text
 		final ViewGroup

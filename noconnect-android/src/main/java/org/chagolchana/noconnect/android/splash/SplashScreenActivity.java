@@ -68,16 +68,16 @@ public class SplashScreenActivity extends BaseActivity {
 	}
 
 	protected void startNextActivity() {
-		if (System.currentTimeMillis() >= EXPIRY_DATE) {
+		boolean hasExpired = System.currentTimeMillis() >= EXPIRY_DATE;
+		if (hasExpired) {
 			LOG.info("Expired");
-			startActivity(new Intent(this, ExpiredActivity.class));
+			//startActivity(new Intent(this, ExpiredActivity.class));
+		}
+		if (configController.accountExists()) {
+			startActivity(new Intent(this, NavDrawerActivity.class));
 		} else {
-			if (configController.accountExists()) {
-				startActivity(new Intent(this, NavDrawerActivity.class));
-			} else {
-				configController.deleteAccount(this);
-				startActivity(new Intent(this, SetupActivity.class));
-			}
+			configController.deleteAccount(this);
+			startActivity(new Intent(this, SetupActivity.class));
 		}
 	}
 
