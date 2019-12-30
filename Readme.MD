@@ -1,4 +1,3 @@
-
 <h1 align="center">NoConnect</h1>
 
 <div align="center">
@@ -45,6 +44,8 @@
 
 
 ## Table of Contents
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frabimba%2Fnoconnect.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Frabimba%2Fnoconnect?ref=badge_shield)
+
 - [Features](#features)
 - [Background](#philosophy)
 - [Installation](#installation)
@@ -79,3 +80,6 @@ You will need Android Studio to build the project.  Clone the repository and ope
 
 ## License
 ### Other projects used
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frabimba%2Fnoconnect.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Frabimba%2Fnoconnect?ref=badge_large)
